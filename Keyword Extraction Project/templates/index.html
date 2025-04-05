@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>RAKE Keyword Extractor</title>
+</head>
+<body>
+    <h1>RAKE Keyword Extractor</h1>
+    <form method="POST">
+        <textarea name="text" rows="10" cols="80" placeholder="Enter your text here...">{{ text }}</textarea><br>
+        <label for="num_keywords">Number of Keywords:</label>
+        <input type="number" name="num_keywords" id="num_keywords" value="{{ num_keywords }}">
+        <br><br>
+        <input type="submit" value="Extract Keywords">
+    </form>
+    {% if keywords %}
+    <h2>Extracted Keywords:</h2>
+    <ul>
+        {% for keyword in keywords %}
+        <li>{{ keyword }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</body>
+</html>
